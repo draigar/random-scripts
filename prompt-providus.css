@@ -1,0 +1,24 @@
+.pw_prompt {
+    position:fixed;
+    left: 50%;
+    top:50%;
+    margin-left:-100px;
+    padding:15px;
+    width:200px;
+    border:1px solid rgba(0,0,0,.2);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+.pw_prompt label {
+    display:block; 
+    margin-bottom:5px;
+}
+.pw_prompt input {
+    margin-bottom:10px;
+    border-radius: 3px;
+    border:1px solid rgba(0,0,0,.2);
+    box-shadow: 0 5px 4px rgba(0,0,0,.2);
+}
+.pw_prompt input[type=submit] {
+  border:none;
+}
