@@ -1,0 +1,48 @@
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  
+  <script>
+	(function () {
+		function l(e) {
+			console.log(e);
+		}
+	
+		time_now  = (new Date()).getTime()
+		var data = {
+			value: "DDL",
+			time: time_now
+		};
+	
+		var lastclear = localStorage.getItem('lastclear');
+		
+		if(lastclear != null) {
+			var clearedData = JSON.parse(lastclear);
+			var dataTime = clearedData["time"];
+			var minutes = 1000 * 60;
+			var d = new Date(dataTime);
+			var t = d.getTime();
+			var y = Math.round(t / minutes);
+			var dd = new Date(t);
+			//l(dd.toUTCString() + ' - ' + time_now.toUTCString());
+			
+			var tn = new Date(time_now);
+			l(d.toUTCString() + ' - ' + tn.toUTCString());
+			
+			
+		}else {
+			localStorage.setItem('lastclear', JSON.stringify(data));
+		}
+		
+		
+	  <!-- // .getTime() returns milliseconds so 1000 * 60 * 60 * 24 = 24 days -->
+	  <!-- if ((time_now) > 60000) { -->
+
+		<!-- //localStorage.clear(); -->
+
+		<!-- localStorage.setItem('lastclear', 'ccl'); -->
+	  <!-- } -->
+
+	})();
+  </script>
